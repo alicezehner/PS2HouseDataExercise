@@ -42,4 +42,4 @@ finalOutput = test[['Id', 'SalePrice']]
 print(finalOutput.to_string(index=False))
 
 #export final output to a .csv
-finalOutput.to_csv (r'HW2.csv', index=False, header=True)
+finalOutput.to_csv (r'predictions.csv', index=False, header=True)
