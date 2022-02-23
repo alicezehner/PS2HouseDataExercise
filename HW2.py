@@ -12,7 +12,6 @@ numeric = data.select_dtypes(include=[np.number]).interpolate().dropna(axis=1)
 # correlate data
 corr = numeric.corr()['SalePrice']
 col = corr.sort_values(ascending=False)
-
 # create X and Y of numeric data and Sale Price to create linReg with
 Y = data['SalePrice']
 X = numeric.drop(['SalePrice'], axis = 1)
@@ -39,7 +38,9 @@ test['SalePrice'] = testPredictRounded
 
 finalOutput = test[['Id', 'SalePrice']]
 #print predicted price and Id for user
-print(finalOutput.to_string(index=False))
+#print(finalOutput.to_string(index=False))
 
 #export final output to a .csv
-finalOutput.to_csv (r'predictions.csv', index=False, header=True)
+#finalOutput.to_csv (r'predictions.csv', index=False, header=True)
+
+#predict using only col with R^2 greater than 0.5
